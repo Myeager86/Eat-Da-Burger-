@@ -6,14 +6,22 @@
         <form class="create-form">
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">What is in your burger?</label>
+                <label for="exampleFormControlTextarea1" id="burger-type">What is in your burger?</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
             </div>
             <button type="submit">Add burger</button>
         </form>
+
+        <div class="form-group">
+            <label for="consumed">Eaten?</label>
+            <br>
+            <input type="radio" name="consumed" value="1" checked> Hungry!
+            <br>
+            <input type="radio" name="consumed" value="0"> Consumed
+        </div>
     </div>
 </div>
-<div class="container" style = "text-align: center">
+<div class="container" style="text-align: center">
     <h2>Burgers yet to be consumer</h2>
 
     <ul>
@@ -26,12 +34,3 @@
         {{#each burger}} {{#if consumed}} {{> burger/burger-block sleep=true}} {{/if}} {{/each}}
     </ul>
 </div>
-
-{{!--
-<div class="form-group">
-    <label for="sleepy">Eaten?</label>
-    <br>
-    <input type="radio" name="sleepy" value="1" checked> Hungry!
-    <br>
-    <input type="radio" name="sleepy" value="0"> Consumed
-</div> --}}
